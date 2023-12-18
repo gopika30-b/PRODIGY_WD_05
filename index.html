@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Weather Application</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <header id="header">
+        <div class="header-content-div">
+            <a href="#home-sec">
+                <img src="./asserts/logo.png" alt="Company Logo" id="header-img" /></a>
+            <nav id="nav-bar">
+                <a href="#home-sec" class="nav-link">HOME</a>
+                <a href="#current-sec" class="nav-link">CURRENT</a>
+                <a href="#forecast-sec" class="nav-link">FORECAST</a>
+            </nav>
+        </div>
+    </header>
+    <section id="home-sec" class="flexible home-sec">
+        <div class="eye-grabber">
+            <h1>Unveiling Nature's Mood: Your Forecast, Your Way!</h1>
+            <h2>
+                Where every cloud has a silver lining, and every ray of sunshine is a promise - Your personalized
+                weather adventure starts here!
+            </h2>
+            <button class="btn" onclick="window.location.href = '#current-sec';">
+                Current
+            </button>
+            <button class="btn" onclick="window.location.href = '#forecast-sec';">
+                Forecast
+            </button>
+        </div>
+    </section>
+    <section id="current-sec">
+        <div class="jumbotron jumbo">
+            <h2>Get Current Weather Information</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-center text-primary">Enter City Name:</h3>
+                    <div id="error"></div>
+                </div>
+                <div class="row form-group form-inline" id="city">
+                    <input type="text" name="cityname" id="Currentcityname" class="form-control"
+                        placeholder="Enter city name"></input>
+                    <button id="submitCity" class="btn btn-primary"
+                        onclick="getWeather(document.getElementById('Currentcityname').value);">Search City</button>
+                </div>
+                <div id="weather-data">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="forecast-sec">
+        <div class="jumbotron jumbo">
+            <h2>Get Weather Information upto 16 days</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="city-name">City Name:</label>
+                        <input type="text" class="form-control" id="cityname" placeholder="Eg:London">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="number-of-days">Number of days:</label>
+                        <input type="text" class="form-control" id="days" placeholder="min:1 max:16">
+                    </div>
+
+                    <div class="form-group">
+                        <button id="submitCity" class="btn btn-primary"
+                            onclick="getForecast(document.getElementById('cityname').value,document.getElementById('days').value);">Get
+                            Forecast</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered  table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Icon</td>
+                                    <th>Weather</td>
+                                    <th>Description</td>
+                                    <th>Morning</td>
+                                    <th>Night</td>
+                                    <th>Min</td>
+                                    <th>Max</td>
+                                    <th>Pressure</td>
+                                    <th>Humidity</td>
+                                    <th>Wind Speed</td>
+                                </tr>
+                            </thead>
+                            <tbody id="forecast">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        Designed and Developed by
+        <a href="http://www.linkedin.com/in/gopika30">Gopika B</a>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="./js/script.js"></script>
+</body>
+
+</html>
